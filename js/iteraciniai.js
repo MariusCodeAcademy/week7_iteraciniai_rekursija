@@ -8,6 +8,14 @@ console.log(numbers);
 // * filter
 // * reduce
 // 3. Sukurkite ir atvaizduokite masyvą su dvigubomis reikšmėmis;
-let doubles = numbers.map((num) => num / 3);
+let doubles = numbers.map((num) => num * 2);
+//  4. Sukurkite ir atvaizduokite masyvą su kvadratu pekltomis reikšmėmis;
+let power = numbers.map((num) => num ** 2);
+//  5. Sukurkite ir atvaizduokite masyvą su reikšmėmis padaugintomis iš jų vietos masyve indekso
 
-console.log("doubles", doubles);
+//  6. Atrinkti tiktai teigimų elementų masyvą
+
+//  ========================= Rezultatai ==============================
+
+printMe("doubles", doubles);
+printMe("power", power);
