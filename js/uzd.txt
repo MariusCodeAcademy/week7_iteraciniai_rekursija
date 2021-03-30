@@ -1,0 +1,24 @@
+----------------------Užduotys--------------------------
+ 1. Susikurkite skaičių masyvą
+ 2. Sekančias užduotis atlikti su masyvo iteraciniais metodais:
+  * forEach
+  * map
+  * filter
+  * reduce
+ 3. Sukurkite ir atvaizduokite masyvą su dvigubomis reikšmėmis;
+ 4. Sukurkite ir atvaizduokite masyvą su kvadratu pekltomis reikšmėmis;
+ 5. Sukurkite ir atvaizduokite masyvą su reikšmėmis padaugintomis iš jų vietos masyve indekso
+ 6. Atrinkti tiktai teigimų elementų masyvą
+ 7. Atrinkti tiktai neigiamų elementų masyvą
+ 8. Atrinkti tiktai lyginių skaičių masyvą
+ 9. Atrinkti tiktai nelyginių skaičių masyvą
+ 10. Sukurkite masyvą kuriame visos neigiamos reikšmės būtų paverstos teigiamomis
+ 11. Atrinkti tik natūralių skaičių masyvą
+ 12. Suapvalinti visas masyvo reikšmes iki sveikų skaičių
+ 13. Atrinkti kas antrą elementą į naują masyvą
+ 14. Atrinkti kas penktą elementą į naują masyvą
+ 15. Atspausdinti kiekvieną masyvo reikšmę atskiroje eilutėje: [0] => 64. 
+ 16. Suskaičiuoti visų elementų sumą
+ 17. Suskaičiuoti visų elementų vidurkį
+ 18. Rasti didžiausią skaičių masyve
+ 19. Rasti mažiausią skaičių masyve
