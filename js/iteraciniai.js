@@ -27,10 +27,19 @@ let evenNums = numbers.filter((num) => num % 2 === 0);
 let oddNums = numbers.filter((num) => num % 2 !== 0);
 
 // 10. Sukurkite masyvą kuriame visos neigiamos reikšmės būtų paverstos teigiamomis
+let negToPos = numbers.map((num) => (num > 0 ? num : num * -1));
 
 // 11. Atrinkti tik natūralių skaičių masyvą
+let naturals = numbers.filter((num) => Number.isInteger(num) && num > 0);
 
 // 12. Suapvalinti visas masyvo reikšmes iki sveikų skaičių
+let rounded = numbers.map((num) => Math.round(num));
+
+// 13. Atrinkti kas antrą elementą į naują masyvą
+
+// 14. Atrinkti kas penktą elementą į naują masyvą
+
+// 15. Atspausdinti kiekvieną masyvo reikšmę atskiroje eilutėje: [0] => 64.
 
 //  ========================= Rezultatai ==============================
 
@@ -41,3 +50,6 @@ printMe("positive", positive);
 printMe("negatives", negatives);
 printMe("evenNums", evenNums);
 printMe("oddNums", oddNums);
+printMe("negToPos", negToPos);
+printMe("naturals", naturals);
+printMe("rounded", rounded);
