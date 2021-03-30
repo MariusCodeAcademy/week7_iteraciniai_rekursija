@@ -2,7 +2,7 @@
 console.log("iteraciniai");
 //       index   0  1  2 ...
 const numbers = [1, 2, 3, 5.3, 8, -8, -5.5, -6, -16, -5, -9, 4.2, 5, 12, -6, 45];
-console.log(numbers);
+// console.log(numbers);
 //  * forEach
 // * map
 // * filter
@@ -36,13 +36,24 @@ let naturals = numbers.filter((num) => Number.isInteger(num) && num > 0);
 let rounded = numbers.map((num) => Math.round(num));
 
 // 13. Atrinkti kas antrą elementą į naują masyvą
-
+let everySecond = numbers.filter((num, indx) => {
+  return indx % 2 === 0;
+});
 // 14. Atrinkti kas penktą elementą į naują masyvą
+let everyFith = numbers.filter((num, idx) => idx % 5 === 0);
 
 // 15. Atspausdinti kiekvieną masyvo reikšmę atskiroje eilutėje: [0] => 64.
+let myString = "";
+// numbers.forEach((num, idx) => (myString += `[${idx}] => ${num}\n`));
+// \n - naujos eilute simbolis - enter
+myString = numbers.reduce((total, num, idx) => total + `[${idx}] => ${num}\n`, "");
+
+// 16. Suskaičiuoti visų elementų sumą
+
+// 17. Suskaičiuoti visų elementų vidurkį
 
 //  ========================= Rezultatai ==============================
-
+printMe("pradinis masyvas", numbers);
 printMe("doubles", doubles);
 printMe("power", power);
 printMe("indexTimesNum", indexTimesNum);
@@ -53,3 +64,6 @@ printMe("oddNums", oddNums);
 printMe("negToPos", negToPos);
 printMe("naturals", naturals);
 printMe("rounded", rounded);
+printMe("everySecond", everySecond);
+printMe("everyFith", everyFith);
+printMe("myString", myString);
