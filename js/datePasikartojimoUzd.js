@@ -28,13 +28,12 @@ console.log("dateUzd");
 function outputDateFormat() {
   let now = new Date();
   //   now.setHours(19);
-  console.log(now.toDateString());
+  //   console.log(now.toDateString());
   // ind             0        1         2            3          4           5           6
   let daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   let dayNr = now.getDay();
   let weekday = daysArr[dayNr];
   let outputString = `Today is: ${weekday}`;
-  console.log(outputString);
   let hours24 = now.getHours();
   let hours12;
   let amPm;
@@ -47,6 +46,27 @@ function outputDateFormat() {
   }
   let minutes = now.getMinutes();
   let sec = now.getSeconds();
-  console.log(`Current time is ${hours12} ${amPm} : ${minutes} : ${sec}`);
+  outputString += `<br> Current time is ${hours12} ${amPm} : ${minutes} : ${sec}`;
+
+  //   console.log(outputString);
+
+  return outputString;
 }
 outputDateFormat();
+
+// pagalbine funkcija kuri atvaizduoja string i html elemento vidu
+function printToHtml(elId, stringToPrint) {
+  document.getElementById(elId).innerHTML = stringToPrint;
+}
+
+setInterval(() => {
+  printToHtml("app", outputDateFormat());
+}, 1000);
+
+// 2 dd-mm-yyyy
+
+function getDateFormat() {
+  let now = new Date();
+  console.log(`${now.getDay()}-${now.getMonth()}-${now.getFullYear()}`);
+}
+getDateFormat();
