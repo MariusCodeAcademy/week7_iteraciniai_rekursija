@@ -49,8 +49,29 @@ let myString = "";
 myString = numbers.reduce((total, num, idx) => total + `[${idx}] => ${num}\n`, "");
 
 // 16. Suskaičiuoti visų elementų sumą
+let totalSum = numbers.reduce((total, num) => total + num, 0);
 
 // 17. Suskaičiuoti visų elementų vidurkį
+let avg = numbers.reduce((avg, num) => avg + num / numbers.length, 0);
+
+// 18. Rasti didžiausią skaičių masyve
+// pradedam lyginti ir pradine reiksme bus pirmas skaicius
+let max = numbers[0];
+let maxManual = numbers[0];
+numbers.forEach((num) => {
+  if (maxManual < num) maxManual = num;
+  // terenary operator
+  // salyga ? true : false
+  // maxManual < num ? (maxManual = num) : null;
+});
+
+// Math.max(num1, num2) - grazina didesni skaiciu
+numbers.forEach((num) => (max = Math.max(num, max)));
+// reduce way
+max = numbers.reduce((argMax, num) => Math.max(argMax, num), numbers[0]);
+
+// 19. Rasti mažiausią skaičių masyve
+let min = numbers.reduce((argMin, num) => Math.min(argMin, num), numbers[0]);
 
 //  ========================= Rezultatai ==============================
 printMe("pradinis masyvas", numbers);
@@ -67,3 +88,8 @@ printMe("rounded", rounded);
 printMe("everySecond", everySecond);
 printMe("everyFith", everyFith);
 printMe("myString", myString);
+printMe("totalSum", totalSum);
+printMe("avg", avg);
+printMe("max", max);
+printMe("min", min);
+printMe("maxManual", maxManual);
