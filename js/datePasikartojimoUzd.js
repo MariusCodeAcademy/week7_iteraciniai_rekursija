@@ -67,6 +67,62 @@ setInterval(() => {
 
 function getDateFormat() {
   let now = new Date();
-  console.log(`${now.getDay()}-${now.getMonth()}-${now.getFullYear()}`);
+  let day = now.getDate();
+  let month = now.getMonth() + 1;
+  console.log(`${fixSubTen(day)}-${fixSubTen(month)}-${now.getFullYear()}`);
 }
+function fixSubTen(num) {
+  return num < 10 ? "0" + num : num;
+}
+console.log("fixSubTen", fixSubTen(8));
+
 getDateFormat();
+
+// 3. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
+
+function isItLeapYear() {
+  // gauti dabartinius metus
+  let now = new Date();
+
+  let year = now.getFullYear();
+  year = 2016;
+  // ar metai dalinasi is 4 lygiai
+  if (year % 4 !== 0) {
+    console.log("not a leap year");
+    return;
+  }
+
+  // ar metai dalinasi is 100 ir is 400
+  if (year % 100 === 0 && year % 400 === 0) {
+    console.log("leap year");
+  } else {
+    console.log("not a leap year");
+  }
+}
+
+function leapYearTer(year) {
+  return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
+}
+console.log("leapYearTer", leapYearTer(2020));
+
+isItLeapYear();
+
+// 4 Parasyti funkcija kuri surastu ar tarp 2014 ir 2050 sausio pirma yra kazkada sekmadieni
+// atspausdinti data jei taip yra.
+
+function wasThereSundayOnJanFirst() {
+  // ar buvo sekmadienis pagal duota data
+  // ar 2014 01 01 buvo sekmadienis?
+  let d = new Date("2014-01-01");
+  d.setFullYear(2016);
+  console.log("d", d.toDateString());
+  // susigeneruoti metu masyva
+  for (let metai = 2014; metai <= 2050; metai++) {
+    d.setFullYear(metai);
+    if (d.getDay() === 0) {
+      console.log("sekmadienis", d.toDateString());
+    }
+  }
+}
+
+wasThereSundayOnJanFirst();
