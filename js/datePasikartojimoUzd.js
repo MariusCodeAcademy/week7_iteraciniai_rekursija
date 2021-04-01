@@ -223,3 +223,7 @@ function timePassed(sinceWhen) {
 let now = new Date();
 let time = now - 120 * 60 * 1000;
 timePassed(time);
+
+// 8. Parasyti funkcija kuri sugeneruoja random sveika skaiciu nuo 1 iki 10. Vartotojo papraso speti skaiciu ir jei atspeja pranesa "Pataikei" arba "Nepavyko, bandyk dar karta"
+
+prompt("ivesite skaiciu");
