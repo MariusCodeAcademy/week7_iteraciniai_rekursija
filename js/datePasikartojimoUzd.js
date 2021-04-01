@@ -24,7 +24,24 @@ console.log("dateUzd");
 // 7a. jei min skaicius daugiau nei valanda, tai pranesti valandu skaiciu
 // 7b. jei valandu skaicius didesnis uz 3 paras tai pranesti dienu skaiciu
 
-//1
+// 8. Parasyti funkcija kuri sugeneruoja random sveika skaiciu nuo 1 iki 10. Vartotojo papraso speti skaiciu ir jei atspeja pranesa "Pataikei" arba "Nepavyko, bandyk dar karta"
+
+// 9. Parasyti funkcija kuri pavercia Temperaturos vienetus is Celsijaus i Farenheitus rezultata graziai atspausdina ir grazina paversta skaiciu
+
+// 10 parasyti funkcija gauti puslapio adresui kuris siuo metu uzkrautas (URL)
+
+// 11 parasyti funkcija kuri grazina ir atspausdina paduotu failo pavadinimo prievardi
+// jei prievardzio nera pranesti apie tai vartotojui "myFile.txt", 'blueberies.jpg', 'book'
+
+// 12 parasyti funkcija kuri ima zodi kaip argumenta. Ir perdelioja jo visas raides is desines i kaire.
+// pvz
+// Programavimas
+// srogramavimaP
+// rogramavimaPs
+// ogramavimaPsr .....
+
+// atvaizduoti procesa eilutem
+
 function outputDateFormat() {
   let now = new Date();
   //   now.setHours(19);
@@ -121,3 +138,57 @@ function wasThereSundayOnJanFirst() {
 }
 
 // wasThereSundayOnJanFirst();
+
+// 5 parasyti funkcija kuri atspausdina kiek dienu liko iki kaledu.
+
+function kiekDienuIkiKaledu() {
+  console.log("266");
+  // siandienos data
+  let today = new Date();
+  // kaledu data
+  let christmas = new Date("2021-12-24");
+  console.log("today", today.toDateString(), "christmas", christmas.toDateString());
+
+  // skirtumo tarp datu
+  let diffMs = christmas - today;
+  console.log("diffMs", diffMs);
+  // paversti ta skirtuma dienom
+  let msToDays = diffMs / 1000 / 3600 / 24;
+  // gaunam kiek pilnu dienu
+  let wholeDays = Math.floor(msToDays);
+
+  // panaudojom pagalbine funkcija
+  //let wholeDays = daysDiff(today, christmas);
+
+  // atspausdinti
+  console.log("iki kaledu liko", wholeDays, "dienu");
+}
+kiekDienuIkiKaledu();
+
+function daysDiff(start, finish) {
+  let diff = finish - start;
+  let days = diff / 1000 / 3600 / 24;
+  days = Math.floor(days);
+  return days;
+}
+
+// 6 Parasyti funkcija kuri grazina kelintadienis buvo argumentu paduoda data.
+
+function kelintadienis(date) {
+  // pasiimti data
+  let my_date = new Date(date);
+  // patikrinti kelintadienis yra ta diena
+  // getDay() - grazina skaiciu nuo 0 iki 6
+  let daySk = my_date.getDay();
+  console.log("daySk", daySk);
+  // paversi kelintadienis skaiciu i savaites dienos pavadinima
+  let weekDay = dayToWeekDay(daySk);
+  console.log(`jusu pasirinkta data: ${date} savaites diena: ${weekDay}`);
+}
+kelintadienis("2021-12-24");
+
+function dayToWeekDay(sk) {
+  // ind             0        1         2            3          4           5           6
+  let daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return daysArr[sk];
+}
