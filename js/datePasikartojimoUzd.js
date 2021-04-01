@@ -36,9 +36,9 @@ console.log("dateUzd");
 // 12 parasyti funkcija kuri ima zodi kaip argumenta. Ir perdelioja jo visas raides is desines i kaire.
 // pvz
 // Programavimas
-// srogramavimaP
-// rogramavimaPs
-// ogramavimaPsr .....
+// rogramavimasP
+// gramavimasPro
+// ramavimasProg .....
 
 // atvaizduoti procesa eilutem
 
@@ -192,3 +192,34 @@ function dayToWeekDay(sk) {
   let daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   return daysArr[sk];
 }
+
+// 7. Parasyti funkcija kuri pranesa kiek minuciu yra praeje nuo dabar iki paduotos argumentu datos
+function timePassed(sinceWhen) {
+  if (typeof sinceWhen !== "number") return;
+  // console.log("sinceWhen", sinceWhen.toDateString());
+  let now = new Date();
+  // naujas datos obkjektas is argumento
+  let uzduotaData = new Date(sinceWhen);
+  // let uzduotaData = new Date(threeMin);
+  // suskaiciuoti skirtuma tarp dabarties ir paduoto laiko
+  let diff = now - uzduotaData;
+  // skirtumas min
+  let min = diff / 1000 / 60;
+
+  // dienu atvejis
+  if (min > 3 * 60 * 24) {
+    console.log(`nuo uzduoto laiko praejo ${min / 60 / 24} paros`);
+    return;
+  }
+
+  // val atvejis
+  if (min > 60) {
+    console.log(`nuo uzduoto laiko praejo ${min / 60} val`);
+    return;
+  }
+
+  console.log(`nuo uzduoto laiko praejo ${min} min`);
+}
+let now = new Date();
+let time = now - 120 * 60 * 1000;
+timePassed(time);
