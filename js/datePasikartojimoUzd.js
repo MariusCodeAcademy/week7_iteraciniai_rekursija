@@ -46,18 +46,13 @@ function outputDateFormat() {
   }
   let minutes = now.getMinutes();
   let sec = now.getSeconds();
-  outputString += `<br> Current time is ${hours12} ${amPm} : ${minutes} : ${sec}`;
+  outputString += `<br> Current time is ${fixSubTen(hours12)} ${amPm} : ${fixSubTen(minutes)} : ${sec}`;
 
   //   console.log(outputString);
 
   return outputString;
 }
 outputDateFormat();
-
-// pagalbine funkcija kuri atvaizduoja string i html elemento vidu
-function printToHtml(elId, stringToPrint) {
-  document.getElementById(elId).innerHTML = stringToPrint;
-}
 
 setInterval(() => {
   printToHtml("app", outputDateFormat());
@@ -74,7 +69,7 @@ function getDateFormat() {
 function fixSubTen(num) {
   return num < 10 ? "0" + num : num;
 }
-console.log("fixSubTen", fixSubTen(8));
+// console.log("fixSubTen", fixSubTen(8));
 
 getDateFormat();
 
@@ -103,9 +98,9 @@ function isItLeapYear() {
 function leapYearTer(year) {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 }
-console.log("leapYearTer", leapYearTer(2020));
+// console.log("leapYearTer", leapYearTer(2020));
 
-isItLeapYear();
+// isItLeapYear();
 
 // 4 Parasyti funkcija kuri surastu ar tarp 2014 ir 2050 sausio pirma yra kazkada sekmadieni
 // atspausdinti data jei taip yra.
@@ -115,7 +110,7 @@ function wasThereSundayOnJanFirst() {
   // ar 2014 01 01 buvo sekmadienis?
   let d = new Date("2014-01-01");
   d.setFullYear(2016);
-  console.log("d", d.toDateString());
+  // console.log("d", d.toDateString());
   // susigeneruoti metu masyva
   for (let metai = 2014; metai <= 2050; metai++) {
     d.setFullYear(metai);
@@ -125,4 +120,4 @@ function wasThereSundayOnJanFirst() {
   }
 }
 
-wasThereSundayOnJanFirst();
+// wasThereSundayOnJanFirst();

@@ -29,3 +29,9 @@ function printMe(header, data, printType = "log") {
   console.groupEnd();
   console.log("");
 }
+
+// pagalbine funkcija kuri atvaizduoja string i html elemento vidu
+function printToHtml(elId, stringToPrint) {
+  let htmlEl = document.getElementById(elId);
+  if (htmlEl) htmlEl.innerHTML = stringToPrint;
+}
