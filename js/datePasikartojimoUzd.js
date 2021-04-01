@@ -226,4 +226,43 @@ timePassed(time);
 
 // 8. Parasyti funkcija kuri sugeneruoja random sveika skaiciu nuo 1 iki 10. Vartotojo papraso speti skaiciu ir jei atspeja pranesa "Pataikei" arba "Nepavyko, bandyk dar karta"
 
-prompt("ivesite skaiciu");
+function letsGuess() {
+  // sugenereuoti skaiciu nuo 1 iki 10 sveika skaiciu
+  let randomNumber = Math.floor(Math.random() * 10) + 1;
+  // console.log("randomNumber", randomNumber);
+  // paprasyti user input ir patikrtinti ar pataikyta
+  let userNumber = prompt("Iveskite skaiciu");
+  // console.log("userNumber", +userNumber);
+
+  if (randomNumber === +userNumber) {
+    console.log("Pataikete, sveikinimai");
+  } else {
+    console.log("Neatspejote, bandykite dar karta. Kompiuteris spejo kad sptesit", randomNumber);
+  }
+}
+
+// letsGuess();
+
+// 10 parasyti funkcija gauti puslapio adresui kuris siuo metu uzkrautas (URL)
+let currentUrl = window.location.href;
+console.log(currentUrl);
+
+// 11 parasyti funkcija kuri grazina ir atspausdina paduotu failo pavadinimo prievardi
+// jei prievardzio nera pranesti apie tai vartotojui "myFile.txt", 'blueberies.jpg', 'book'
+
+function getExtention(file) {
+  // surasti prievardi
+  // jei yra . tai yra prievardis
+  let dot = file.lastIndexOf(".");
+  console.log("dot", dot);
+  if (dot !== -1) {
+    let prievardis = file.slice(dot);
+    console.log(prievardis);
+  } else {
+    console.warn("prievardzio nera");
+  }
+}
+
+getExtention("some.file.txt");
+getExtention("some.file.jpg");
+getExtention("somefile");
