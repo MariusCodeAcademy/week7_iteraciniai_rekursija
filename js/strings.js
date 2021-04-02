@@ -38,6 +38,16 @@ printMe("1c apsuktas string Chain", reversedStringChain);
 
 ourString = "javascript yra narsykles interaktyvumo irankis";
 // 2. paversti pirmo zodzio pirma raide i didziaja
+// string.toUpperCase() - pavercia duota stringa diziosiom raidem
+// let upper = ourString.toUpperCase();
+// printMe("upper", upper);
+let firstLetter = ourString.charAt(0).toUpperCase();
+printMe("ourString", ourString);
+printMe("firstLetter", firstLetter);
+
+let capitalFirst = firstLetter + ourString.slice(1);
+printMe("capitalFirst", capitalFirst);
+
 // 2b. paversti kiekvieno zodzio pirma raide i didziaja.
 
 //3 Parasyti funkcija kuri is paprasto sakinio paverstu i camelCase
