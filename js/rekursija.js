@@ -144,10 +144,53 @@ function upToRecursive(num) {
   // debugger;
   // isejimo salyga
   if (num === 0) return 0;
-
-  return num + upToRecursive(num - 1);
-
-  // rekursija
+  return num + upToRecursive(num - 1); // rekursija
 }
 let recRez = upToRecursive(5);
 printMe("Rec add to", recRez);
+
+// parasyti funkcija kuri suskaiciuoja string ilgi
+
+function strLen(str) {
+  // hello
+  // debugger;
+  // isejimo salyga
+  if (str === "") return 0;
+
+  // console.log("str:", str);
+
+  //veiksmas ir rekursija
+  let total = 1 + strLen(str.slice(1));
+  return total;
+}
+console.log(strLen("hello"));
+// hello
+// pasiimti viena raide ir priskaiciuoti vieneta
+// hello
+// ello => 1
+// llo => 1 + 1
+// lo => 2 + 1
+// o => 3 + 1
+// '' => grazinti suma 4
+// isvada kad kiekvienos funkcijo vygdymo atveju mes paduodam 1 raide maziau
+
+let numbersArr = [2, 5, 4, 7];
+// susumuoti skaicius rekursiskai
+function sumArrayValues(arr) {
+  debugger;
+  // isejimo salyga = kai masyvas tuscias
+  if (arr.length === 0) return 0;
+  // veiksmas plius rekursija
+  //           2                       [ 5 , 4, 7 ]
+  let total = arr[0] + sumArrayValues(arr.slice(1));
+  console.log("total", total, "arr", arr);
+
+  return total;
+}
+sumArrayValues(numbersArr);
+
+// [ 2, 5 , 4, 7 ]  => 2
+// [ 5 , 4, 7 ]  => 2 + 5
+// [ 4, 7 ]  => 7 + 4
+// [ 7 ]  => 11 + 7
+// [] = isejimo salyga
