@@ -63,7 +63,10 @@ function makeStringCapitalized(argString) {
   //   console.log("finalString", finalString);
   return finalString;
 }
-makeStringCapitalized(ourString);
+
+let capString = makeStringCapitalized(ourString);
+printMe("2b Make string Capitalized", capString);
+
 // helper fn kuri pavercia paduoto zodzio pirma raide diziaja.
 function makeFirstLetterUppercase(word) {
   let firstLetter = word.charAt(0); // pirma raide
@@ -75,13 +78,29 @@ let test = makeFirstLetterUppercase("javascript"); //  =>  'Blue'
 // console.log("test", test);
 
 //3 Parasyti funkcija kuri is paprasto sakinio paverstu i camelCase
-// 'My argument Blue' => 'myArgumentBlue'
 
-// gauti zodziu atskirai masyvo pavidalu
+// 'My argument blue' => 'myArgumentBlue'
 
-// pakeisti pirma zodzio pirma raide i mazaja
+function camelCase(string) {
+  // gauti zodziu atskirai masyvo pavidalu
+  let stringAsArray = string.split(" ");
+  console.log(stringAsArray);
+  // pakeisti pirma zodzio pirma raide i mazaja
+  //// gauti pirma zodi
+  let firstWord = stringAsArray[0];
+  console.log("firstWord", firstWord);
+  //// padaryti zodi mazosiom raidem
+  let firstWordLowerCase = firstWord.toLowerCase();
+  console.log("firstWordLowerCase", firstWordLowerCase);
 
-// sujugti string atgal be tarpeliu
+  // padidinti visu masyvo zodziu pirmasia raides
 
+  //// grazinti rez
+  stringAsArray[0] = firstWordLowerCase;
+  console.log(stringAsArray);
+
+  // sujugti string atgal be tarpeliu
+}
+camelCase("My argument blue");
 //4. Parasyti funkcija kuri paduota teksta sumazintu iki argumentu nurodyto dydzio ir gale padetu "..."
 // makeSummary('long text', 30) fn turetu nukirpti paduota teksta ties 30 simboliu
