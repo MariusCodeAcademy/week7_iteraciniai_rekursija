@@ -49,9 +49,39 @@ let capitalFirst = firstLetter + ourString.slice(1);
 printMe("capitalFirst", capitalFirst);
 
 // 2b. paversti kiekvieno zodzio pirma raide i didziaja.
+function makeStringCapitalized(argString) {
+  // gauti kiekviena zodi atskirai
+  let wordsArr = argString.split(" ");
+  //   console.log("wordsArr", wordsArr);
+
+  // gautam zodziui pakeisti pirma raide i didziaja
+  let capitalizedWordsArr = wordsArr.map(makeFirstLetterUppercase);
+  //   console.log("capitalizedWordsArr", capitalizedWordsArr);
+
+  // grazinam galutini rezultata kaip string
+  let finalString = capitalizedWordsArr.join(" ");
+  //   console.log("finalString", finalString);
+  return finalString;
+}
+makeStringCapitalized(ourString);
+// helper fn kuri pavercia paduoto zodzio pirma raide diziaja.
+function makeFirstLetterUppercase(word) {
+  let firstLetter = word.charAt(0); // pirma raide
+  let firstUpp = firstLetter.toUpperCase(); // pirma raide tampa diziaja
+  return firstUpp + word.slice(1); // grazina pirma didija ir likusi string
+}
+
+let test = makeFirstLetterUppercase("javascript"); //  =>  'Blue'
+// console.log("test", test);
 
 //3 Parasyti funkcija kuri is paprasto sakinio paverstu i camelCase
 // 'My argument Blue' => 'myArgumentBlue'
+
+// gauti zodziu atskirai masyvo pavidalu
+
+// pakeisti pirma zodzio pirma raide i mazaja
+
+// sujugti string atgal be tarpeliu
 
 //4. Parasyti funkcija kuri paduota teksta sumazintu iki argumentu nurodyto dydzio ir gale padetu "..."
 // makeSummary('long text', 30) fn turetu nukirpti paduota teksta ties 30 simboliu
