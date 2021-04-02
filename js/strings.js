@@ -82,6 +82,7 @@ let test = makeFirstLetterUppercase("javascript"); //  =>  'Blue'
 // 'My argument blue' => 'myArgumentBlue'
 
 function camelCase(string) {
+  debugger;
   // gauti zodziu atskirai masyvo pavidalu
   let stringAsArray = string.split(" ");
   console.log(stringAsArray);
@@ -94,13 +95,18 @@ function camelCase(string) {
   console.log("firstWordLowerCase", firstWordLowerCase);
 
   // padidinti visu masyvo zodziu pirmasia raides
-
-  //// grazinti rez
-  stringAsArray[0] = firstWordLowerCase;
-  console.log(stringAsArray);
+  let allArrayFirstLettersUpp = stringAsArray.map((word) => makeFirstLetterUppercase(word));
+  //// grazinti pirma zodi mazosiom raidem
+  allArrayFirstLettersUpp[0] = firstWordLowerCase;
+  console.log(allArrayFirstLettersUpp);
 
   // sujugti string atgal be tarpeliu
+  let finalString = allArrayFirstLettersUpp.join("");
+  console.log("finalString", finalString);
+
+  return finalString;
 }
 camelCase("My argument blue");
+
 //4. Parasyti funkcija kuri paduota teksta sumazintu iki argumentu nurodyto dydzio ir gale padetu "..."
 // makeSummary('long text', 30) fn turetu nukirpti paduota teksta ties 30 simboliu

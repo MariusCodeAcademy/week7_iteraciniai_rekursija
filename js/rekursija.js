@@ -35,7 +35,7 @@ function printNumbersRecursive(num) {
   printNumbersRecursive(num - 1);
 }
 // argumentas mazeja vienetu kiekviena karti iskvieciant funkcija
-printNumbersRecursive(10);
+printNumbersRecursive(4);
 // printNumbersRecursive(2);
 // printNumbersRecursive(1);
 // printNumbersRecursive(0);
@@ -120,3 +120,34 @@ Javascript kursai
 ----2 pamoka/
 ------index.html
 */
+
+// parasuti funkcija kuri sudeda visus skaicius iki paduoto argumento
+
+function addUpTo(value) {
+  let total = 0;
+  for (let i = value; i > 0; i--) {
+    console.log("total", total, "i", i);
+    total += i;
+  }
+  console.log("total", total);
+
+  return total;
+}
+addUpTo(3); // 3 + 2 + 1 + 0 = rez
+
+//     3
+// 3 + 2
+// 5 + 1
+// 6 + 0 // iseinam ir grazinam rez
+
+function upToRecursive(num) {
+  // debugger;
+  // isejimo salyga
+  if (num === 0) return 0;
+
+  return num + upToRecursive(num - 1);
+
+  // rekursija
+}
+let recRez = upToRecursive(5);
+printMe("Rec add to", recRez);
